@@ -32,10 +32,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < -5f)
+        if (!winText.activeInHierarchy)
         {
-            SceneManager.LoadScene("Game2");
+            if (transform.position.y < -5f)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
+        
     }
 
     private void FixedUpdate()
